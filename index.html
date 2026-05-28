@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Digit Inference Engine</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/ort.min.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <h1>Digit Inference Engine</h1>
+            <p>Real-time OCR classification via ONNX runtime.</p>
+        </header>
+
+        <div class="tabs">
+            <button id="tab-draw" class="tab active">Canvas Input</button>
+            <button id="tab-camera" class="tab">Camera Input</button>
+        </div>
+
+        <div class="main-content">
+            <div id="draw-mode" class="mode-view active">
+                <div class="canvas-wrapper">
+                    <canvas id="draw-canvas" width="240" height="240"></canvas>
+                </div>
+                <button id="clear-btn" class="secondary-btn">Clear Canvas</button>
+            </div>
+
+            <div id="camera-mode" class="mode-view">
+                <p class="input-hint">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="vertical-align: text-bottom; margin-right: 4px;"><circle cx="12" cy="12" r="10"></circle><line x1="12" y1="8" x2="12" y2="12"></line><line x1="12" y1="16" x2="12.01" y2="16"></line></svg>
+                    For best results, use a bold black marker on plain white paper.
+                </p>
+                <div class="camera-wrapper">
+                    <video id="webcam" autoplay playsinline></video>
+                    <div id="target-box"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="action-area">
+            <button id="predict-btn" class="primary-btn">
+                <span id="btn-spinner" class="spinner hidden"></span>
+                <span id="btn-text">Run Inference</span>
+            </button>
+        </div>
+        
+        <div class="results-area">
+            <div class="prediction-box">
+                <span class="label">Classification</span>
+                <span id="result-text">-</span>
+            </div>
+            <div class="vision-divider"></div>
+            <div class="vision-box">
+                <span class="label">Processed Input</span>
+                <canvas id="ai-vision" width="28" height="28"></canvas>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
