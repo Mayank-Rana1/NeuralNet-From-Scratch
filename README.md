@@ -1,6 +1,15 @@
-# Digit Inference Engine: From-Scratch Neural Network to Edge Deployment
+<div align="center">
 
-**[Live Demonstration: Test the Inference Engine Here](https://mayank-rana1.github.io/NeuralNet-From-Scratch/)** ## Project Philosophy
+# Digit Inference Engine
+**From-Scratch Neural Network to Edge Deployment**
+
+[![Live Demo](https://img.shields.io/badge/Live_Demonstration-Test_the_Inference_Engine_Here-blue?style=for-the-badge&logo=googlechrome&logoColor=white)](https://mayank-rana1.github.io/NeuralNet-From-Scratch/)
+
+</div>
+
+<br>
+
+## Project Philosophy
 The objective of this project was to completely demystify the "black box" of machine learning. Rather than relying on modern frameworks from the start, this project was built by hand-coding the foundational linear algebra and calculus required for a neural network to learn. Once the raw mathematics were proven, the architecture was translated into PyTorch, optimized for edge-compute, and deployed via a custom Vanilla JavaScript computer vision pipeline.
 
 ## The Engineering Pipeline
